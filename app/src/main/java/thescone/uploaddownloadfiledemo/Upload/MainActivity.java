@@ -17,7 +17,7 @@ import java.util.UUID;
 
 import thescone.uploaddownloadfiledemo.Config;
 import thescone.uploaddownloadfiledemo.R;
-import thescone.uploaddownloadfiledemo.Download.UploadedNotes;
+import thescone.uploaddownloadfiledemo.Download.UploadedPDFs;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 uploadMultipart();
                 break;
             case R.id.buttonNext:
-                startActivity(new Intent(this, UploadedNotes.class));
+                startActivity(new Intent(this, UploadedPDFs.class));
                 break;
         }
     }

@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import thescone.uploaddownloadfiledemo.Config;
 import thescone.uploaddownloadfiledemo.R;
 
-public class UploadedNotes extends AppCompatActivity {
+public class UploadedPDFs extends AppCompatActivity {
 
     //Progress bar to check the progress of obtaining pdfs
     ProgressDialog progressDialog;
@@ -82,7 +82,7 @@ public class UploadedNotes extends AppCompatActivity {
                         progressDialog.dismiss();
                         try {
                             JSONObject obj = new JSONObject(response);
-                            Toast.makeText(UploadedNotes.this,obj.getString("message"), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UploadedPDFs.this,obj.getString("message"), Toast.LENGTH_SHORT).show();
 
                             JSONArray jsonArray = obj.getJSONArray("pdfs");
 
@@ -100,7 +100,7 @@ public class UploadedNotes extends AppCompatActivity {
 
                             }
 
-                            pdfAdapter=new PDFAdapter(UploadedNotes.this,R.layout.list_layout, pdfList);
+                            pdfAdapter=new PDFAdapter(UploadedPDFs.this,R.layout.list_layout, pdfList);
 
                             listView.setAdapter(pdfAdapter);
 
