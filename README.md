@@ -13,7 +13,8 @@ With this project, you can:<br>
 1. Choose any PDF file<br>
 2. Give file name<br>
 3. Upload the file to server, and monitor the process.<br>
-
+<br>
+For Download part<br>
 1. View list of uploaded files<br>
 2. Click to download<br>
 <br>
