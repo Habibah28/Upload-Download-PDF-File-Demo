@@ -1,4 +1,4 @@
-package thescone.uploadfiledemo;
+package thescone.uploaddownloadfiledemo.Upload;
 
 import android.content.ContentUris;
 import android.content.Context;

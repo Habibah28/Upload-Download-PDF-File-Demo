@@ -1,4 +1,4 @@
-package thescone.uploadfiledemo;
+package thescone.uploaddownloadfiledemo;
 
 import org.junit.Test;
 

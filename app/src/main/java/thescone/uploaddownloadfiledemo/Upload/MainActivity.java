@@ -1,24 +1,23 @@
-package thescone.uploadfiledemo;
+package thescone.uploaddownloadfiledemo.Upload;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nbsp.materialfilepicker.MaterialFilePicker;
-import com.nbsp.materialfilepicker.ui.FilePickerActivity;
-
 import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
 
 import java.util.UUID;
-import java.util.regex.Pattern;
+
+import thescone.uploaddownloadfiledemo.Config;
+import thescone.uploaddownloadfiledemo.R;
+import thescone.uploaddownloadfiledemo.Download.UploadedNotes;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -46,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         buttonChooseFile.setOnClickListener(this);
         buttonUploadFile.setOnClickListener(this);
+        buttonNext.setOnClickListener(this);
     }
 
     @Override

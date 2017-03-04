@@ -1,4 +1,4 @@
-package thescone.uploadfiledemo;
+package thescone.uploaddownloadfiledemo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
