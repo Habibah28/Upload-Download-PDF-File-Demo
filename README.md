@@ -12,6 +12,9 @@ The file for Upload and Download already in their own folders.<br><br>
 With this project, you can:<br>
 1. Choose any PDF file<br>
 2. Give file name<br>
-3. Upload the file to server, and monitor the process.<br><br>
+3. Upload the file to server, and monitor the process.<br>
 
+1. View list of uploaded files<br>
+2. Click to download<br>
+<br>
 Warning: The list of PDFs fetched have <b>NO FILTER</b> of which user uploaded what.
