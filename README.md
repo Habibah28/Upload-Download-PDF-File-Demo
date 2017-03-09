@@ -22,4 +22,4 @@ Warning: The list of PDFs fetched have <b>NO FILTER</b> of which user uploaded w
 
 <h3>UPDATE - March 9th 2017</h3>
 - removed FilePath.java
-- used <a href = "https://github.com/nbsp-team/MaterialFilePicker">Material File Picker</a>
+- <a href = "https://github.com/nbsp-team/MaterialFilePicker">Material File Picker</a> for Choose File
