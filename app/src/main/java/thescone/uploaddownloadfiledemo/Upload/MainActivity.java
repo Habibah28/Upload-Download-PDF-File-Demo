@@ -10,10 +10,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nbsp.materialfilepicker.MaterialFilePicker;
+import com.nbsp.materialfilepicker.ui.FilePickerActivity;
+
 import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
 
 import java.util.UUID;
+import java.util.regex.Pattern;
 
 import thescone.uploaddownloadfiledemo.Config;
 import thescone.uploaddownloadfiledemo.R;
@@ -27,10 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText editTextFileName;
     Button buttonNext;
 
-    Uri filePath;
-
-    //Pdf request code
-    private int PICK_PDF_REQUEST = 1;
+    String filePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +67,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void uploadMultipart() {
-        //getting name for the image
         if (editTextFileName.getText().toString().isEmpty()) {
             editTextFileName.setError("Required");
         } else {
-            //getting the actual path of the image
-            String path = FilePath.getPath(this, filePath);
+            String path = filePath;
             String name = editTextFileName.getText().toString();
 
             if (path == null) {
@@ -100,10 +99,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void showFileChooser() {
-        Intent intent = new Intent();
-        intent.setType("application/pdf");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Pdf"), PICK_PDF_REQUEST);
+        new MaterialFilePicker()
+                .withActivity(this)
+                .withRequestCode(1)
+                .withFilter(Pattern.compile(".*\\.pdf$")) // Filtering files and directories by file name using regexp
+                .withFilterDirectories(true) // Set directories filterable (false by default)
+                .withHiddenFiles(true) // Show hidden files and folders
+                .start();
     }
 
     //handling the image chooser activity result
@@ -111,9 +113,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == PICK_PDF_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            filePath = data.getData();
-            textViewFilePath.setText(String.valueOf(filePath));
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            filePath = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
+            textViewFilePath.setText(filePath);
         }
     }
 }
