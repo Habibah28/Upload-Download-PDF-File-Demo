@@ -20,6 +20,6 @@ For Download part<br>
 <br>
 Warning: The list of PDFs fetched have <b>NO FILTER</b> of which user uploaded what.
 
-UPDATE - March 9th 2017
+<h3>UPDATE - March 9th 2017</h3>
 - removed FilePath.java
 - used <a href = "https://github.com/nbsp-team/MaterialFilePicker">Material File Picker</a>
